@@ -1,0 +1,5 @@
+#print ("hello")
+student =input ("enter the student name")
+course =input ("enter the course name")
+city =input ("enter the city")
+print(f"{student} joined {course} course in {city}")

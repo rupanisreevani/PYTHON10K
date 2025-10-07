@@ -74,41 +74,58 @@ cursor.execute('use  10000coders')
 
 # def getstudentbycourse(course_name)
 #update record
-def updaterecordsemail(student_id, new_email):
-    try:
-        query = """UPDATE student SET email=%s WHERE id=%s"""
-        cursor.execute(query, (new_email, student_id))
-        conn.commit()   
-        print(f"Student ID {student_id} email updated to {new_email}")
-    except Exception as e:
-        print("Something went wrong:", e)
+# def updaterecordsemail(student_id, new_email):
+#     try:
+#         query = """UPDATE student SET email=%s WHERE id=%s"""
+#         cursor.execute(query, (new_email, student_id))
+#         conn.commit()   
+#         print(f"Student ID {student_id} email updated to {new_email}")
+#     except Exception as e:
+#         print("Something went wrong:", e)
 
-updaterecordsemail(1, "abcd@gmail.com")
+# updaterecordsemail(1, "abcd@gmail.com")
 #deleting a record by email:
 
-def deletestudentemail(email):
-    try:
-        query = """delete from student  WHERE email=%s """
-        cursor.execute(query, (email))
-        conn.commit()   
-        print(f"REcord with email {email} deleted successfully")
-    except Exception as e:
-        print("Something went wrong:", e)
+# def deletestudentemail(email):
+#     try:
+#         query = """delete from student  WHERE email=%s """
+#         cursor.execute(query, (email))
+#         conn.commit()   
+#         print(f"REcord with email {email} deleted successfully")
+#     except Exception as e:
+#         print("Something went wrong:", e)
 
 
-deletestudentemail( "nani@gmail.com")
+# deletestudentemail( "nani@gmail.com")
 #deleting a record by name
-def deletestudentname(name):
+# def deletestudentname(name):
+#     try:
+#         query = """delete from student  WHERE name=%s """
+#         cursor.execute(query, (name))
+#         conn.commit()   
+#         print(f"REcord with name {name} deleted successfully")
+#     except Exception as e:
+#         print("Something went wrong:", e)
+
+
+# deletestudentname( "sai")
+
+# def getlimiteds(limit):
+#     try:
+#         query="""" select * from student limit %s"""
+#         cursor.execute(query,(limit,))
+#         result=cursor.fetchall()
+#         pint(re)
+
+def updateNameAndcourseByEmail( new_name,new_course,email):
     try:
-        query = """delete from student  WHERE name=%s """
-        cursor.execute(query, (name))
-        conn.commit()   
-        print(f"REcord with name {name} deleted successfully")
+        query=""" update student set  name=%s,course=%s where email=%s"""
+        cursor.execute(query,(new_name,new_course,email))
+        print('record is uddated')
     except Exception as e:
-        print("Something went wrong:", e)
+        print('something went wrong:',e)
+updateNameAndcourseByEmail('sai','js','manasa@gmail.com')
 
-
-deletestudentname( "sai")
 
 
 
